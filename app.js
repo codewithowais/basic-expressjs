@@ -1,5 +1,9 @@
 const express = require("express"); // import express js
-const { getUsers, createUser } = require("./controllers/userController");
+const {
+  getUsers,
+  createUser,
+  updateUser,
+} = require("./controllers/userController");
 const mongoose = require("mongoose");
 const app = express(); //
 const port = 3000;
@@ -15,8 +19,8 @@ const data = [];
 
 app.get("/", getUsers);
 app.post("/", createUser);
-app.put("/", getUsers);
-app.delete("/", createUser);
+app.put("/:id", updateUser);
+app.delete("/:id", createUser);
 
 // app.get("/", (req, res) => {
 //   res.send(data);
