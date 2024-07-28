@@ -18,7 +18,7 @@ mongoose
 const data = [];
 
 app.get("/", getUsers);
-app.post("/", createUser);
+app.post("/create", createUser);
 app.put("/:id", updateUser);
 app.delete("/:id", createUser);
 
